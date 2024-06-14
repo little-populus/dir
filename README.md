@@ -1,6 +1,6 @@
 # Simple caculator
 
-##What amazing thing!
+## What amazing thing!
 
 I just finished my first caculator that supports evaluates expression with arbitrary length.
 

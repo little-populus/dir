@@ -13,6 +13,8 @@ std::optional<std::vector<std::shared_ptr<unit>>> parser::parse(std::string_view
     for (auto i = 0; i < data.size(); ++i)
     {
         u.clear();
+        if (data[i] == ' ')
+            continue;
         if (data[i] == '(')
         {
             bracket_match++;

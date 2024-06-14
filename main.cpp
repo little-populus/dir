@@ -20,9 +20,9 @@ int main(int argc, char *argv[])
             evaluator e;
             result = e.evaluate(*i);
             if (std::fmod(result, 1) == 0)
-                std::cout << std::format("{:>16.0f}", result) << '\n';
+                std::cout << std::format("reuslt is : {:<30.0f}", result) << '\n';
             else
-                std::cout << std::format("{:>16f}", result) << '\n';
+                std::cout << std::format("result is : {:<30f}", result) << '\n';
         }
     }
     else if (argc >= 2)
@@ -37,9 +37,9 @@ int main(int argc, char *argv[])
             evaluator e;
             result = e.evaluate(*i);
             if (std::fmod(result, 1) == 0)
-                std::cout << std::format("{:>16.0f}", result) << '\n';
+                std::cout << std::format("reuslt is : {:<30.0f}", result) << '\n';
             else
-                std::cout << std::format("{:>16f}", result) << '\n';
+                std::cout << std::format("result is : {:<30f}", result) << '\n';
         }
         return 0;
     }

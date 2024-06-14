@@ -1,3 +1,4 @@
+#include <cmath>
 #include <evaluator.hpp>
 #include <iostream>
 #include <parser.hpp>
@@ -6,6 +7,7 @@
 int main(int argc, char *argv[])
 {
     std::string data{};
+    double result;
     if (argc == 1)
     {
         while (1)
@@ -15,17 +17,29 @@ int main(int argc, char *argv[])
             if (!i)
                 std::cout << "error" << std::endl;
             evaluator e;
-            std::cout << e.evaluate(*i) << '\n';
+            result = e.evaluate(*i);
+            if (std::fmod(result, 1) == 0)
+                std::cout << std::format("{:>16.0f}", result) << '\n';
+            else
+                std::cout << std::format("{:>16f}", result) << '\n';
         }
     }
-    else if (argc == 2)
+    else if (argc >= 2)
     {
-        data = argv[1];
-        auto i = parser().parse(data);
-        if (!i)
-            std::cout << "error" << std::endl;
-        evaluator e;
-        std::cout << e.evaluate(*i) << '\n';
+        int j = 1;
+        for (j = 1; j < argc; ++j)
+        {
+            data = argv[j];
+            auto i = parser().parse(data);
+            if (!i)
+                std::cout << "error" << std::endl;
+            evaluator e;
+            result = e.evaluate(*i);
+            if (std::fmod(result, 1) == 0)
+                std::cout << std::format("{:>16.0f}", result) << '\n';
+            else
+                std::cout << std::format("{:>16f}", result) << '\n';
+        }
         return 0;
     }
     else

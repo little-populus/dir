@@ -1,5 +1,6 @@
 #include <cmath>
 #include <evaluator.hpp>
+#include <format>
 #include <iostream>
 #include <parser.hpp>
 #include <unit.hpp>
